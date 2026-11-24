@@ -12,6 +12,19 @@ a{color:#8F2447}a:hover{color:#5E1230}
 a:focus-visible{outline:3px solid #B3345A;outline-offset:3px}
 </style>
 <style>html{scroll-behavior:smooth}body{background:#FBF3F4}img{max-width:100%}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
+<style>
+.bio-open{font:inherit;font-weight:500;color:#2A1324;background:none;border:0;padding:0;cursor:pointer;min-height:44px;display:flex;align-items:center}
+.bio-open:hover{color:#8F2447}
+.bio-open:focus-visible,.bio-close:focus-visible{outline:3px solid #B3345A;outline-offset:3px}
+dialog.bio{width:min(720px,calc(100% - 32px));max-height:calc(100% - 48px);padding:0;border:0;border-radius:8px;background:#FBF3F4;color:#2A1324;font-family:'Jost',system-ui,sans-serif;font-size:17px;line-height:1.65;box-shadow:0 24px 60px rgba(27,12,23,0.45)}
+dialog.bio::backdrop{background:rgba(27,12,23,0.7)}
+.bio-inner{padding:40px 36px 36px;display:flex;flex-direction:column;gap:18px}
+.bio-inner p{margin:0;text-wrap:pretty}
+.bio-inner ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.bio-close{position:sticky;top:12px;display:block;margin:12px 12px -32px auto;width:44px;height:44px;border:0;border-radius:50%;background:#F3DFE4;color:#2A1324;font-size:26px;line-height:1;cursor:pointer;z-index:1}
+.bio-close:hover{background:#E8C9D2}
+@media (max-width:520px){.bio-inner{padding:24px 20px 28px}}
+</style>
 </head>
 <body>
 <div style="background:#FBF3F4;color:#2A1324;font-family:'Jost',system-ui,sans-serif;font-size:17px;line-height:1.6">
@@ -19,6 +32,7 @@ a:focus-visible{outline:3px solid #B3345A;outline-offset:3px}
 <header style="max-width:1120px;margin:0 auto;padding:24px 24px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
 <a href="#top" style="font-family:'Bodoni Moda',Georgia,serif;font-size:22px;font-style:italic;color:#2A1324;text-decoration:none">Ornella Vee</a>
 <nav aria-label="Main" style="display:flex;flex-wrap:wrap;gap:24px">
+<button type="button" class="bio-open" data-open-bio>Meet Ornella Vee</button>
 <a href="#books" style="color:#2A1324;text-decoration:none;font-weight:500;min-height:44px;display:flex;align-items:center">Books</a>
 <a href="#reviews" style="color:#2A1324;text-decoration:none;font-weight:500;min-height:44px;display:flex;align-items:center">Reviews</a>
 <a href="#coming-soon" style="color:#2A1324;text-decoration:none;font-weight:500;min-height:44px;display:flex;align-items:center">Coming Soon</a>
@@ -33,6 +47,16 @@ a:focus-visible{outline:3px solid #B3345A;outline-offset:3px}
 <div style="display:flex;flex-wrap:wrap;gap:12px">
 <a href="#books" style="display:inline-flex;align-items:center;min-height:48px;padding:0 28px;background:#A02A50;color:#FFFFFF;text-decoration:none;font-weight:500;border-radius:999px">Meet the books</a>
 <a href="#connect" style="display:inline-flex;align-items:center;min-height:48px;padding:0 28px;border:1.5px solid #2A1324;color:#2A1324;text-decoration:none;font-weight:500;border-radius:999px">Follow along</a>
+</div>
+</section>
+
+<section id="about" style="max-width:1120px;margin:0 auto;padding:0 24px 88px">
+<div style="border-top:1px solid #E3C8D0;padding-top:56px;display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-start">
+<h2 style="flex:1 1 280px;margin:0;font-family:'Bodoni Moda',Georgia,serif;font-weight:500;font-size:clamp(32px,4.5vw,48px);line-height:1.1;text-wrap:balance">Meet Ornella Vee</h2>
+<div style="flex:2 1 400px;display:flex;flex-direction:column;gap:20px">
+<p style="margin:0;font-size:19px;text-wrap:pretty">By day, she navigates the sharp-suited world of corporate strategy, PR, and digital marketing in Dubai. By night, she trades analytics for angst, crafting contemporary and dark romance novels that keep readers up way past their bedtime.</p>
+<button type="button" class="bio-open" data-open-bio style="align-self:flex-start;min-height:48px;padding:0 28px;background:#A02A50;color:#FFFFFF;border-radius:999px;font-weight:500">Read her story</button>
+</div>
 </div>
 </section>
 
@@ -135,5 +159,33 @@ a:focus-visible{outline:3px solid #B3345A;outline-offset:3px}
 </footer>
 
 </div>
+<dialog class="bio" id="bio-dialog" aria-labelledby="bio-title">
+<button type="button" class="bio-close" data-close-bio aria-label="Close">&times;</button>
+<div class="bio-inner">
+<h2 id="bio-title" style="margin:0;font-family:'Bodoni Moda',Georgia,serif;font-weight:500;font-size:clamp(28px,4vw,38px);line-height:1.15;text-wrap:balance">Meet Ornella Vee: The Mind Behind the Mayhem and the Romance</h2>
+<p>By day, she navigates the sharp-suited world of corporate strategy, PR, and digital marketing in Dubai. By night (and during every stolen moment in between), Ornella Vee trades analytics for angst, crafting contemporary and dark romance novels that keep readers up way past their bedtime.</p>
+<p>As the self-published author of <em>The List</em> and <em>The Risk</em>, with a dangerously addictive mafia romance hitting shelves in January 2027, Ornella specializes in morally gray men, fierce heroines, and the kind of slow-burn tension that practically melts your Kindle.</p>
+<p>When she isn&rsquo;t plotting fictional heartbreaks or chasing deadlines, you can usually find her fueled by Dunkin&rsquo; iced coffee, indulging in a shameless fast-food run, or planning her next escape to the beaches of Sri Lanka. Whether she&rsquo;s painting tote bags on a Sunday afternoon or blasting classic rock and Billie Eilish on repeat, Ornella believes life is best lived with a little bit of edge, a lot of heart, and zero regrets.</p>
+<h3 style="margin:8px 0 0;font-family:'Bodoni Moda',Georgia,serif;font-weight:500;font-size:24px">Quick Facts About Ornella</h3>
+<ul>
+<li><strong>Current obsessions:</strong> Morally gray anti-heroes, spicy chicken sandwiches, and ocean views.</li>
+<li><strong>Writing fuel:</strong> Iced coffee, classic rock playlists, and quiet mornings before the 7:00 AM grind.</li>
+<li><strong>When she&rsquo;s not writing:</strong> She&rsquo;s being a mom, traveling back to Sri Lanka, or getting lost in a steamy romance novel of her own.</li>
+</ul>
+</div>
+</dialog>
+<script>
+(function(){
+var d=document.getElementById('bio-dialog');
+if(!d||typeof d.showModal!=='function')return;
+var last=null;
+document.querySelectorAll('[data-open-bio]').forEach(function(b){
+b.addEventListener('click',function(){last=b;d.showModal();});
+});
+d.querySelector('[data-close-bio]').addEventListener('click',function(){d.close();});
+d.addEventListener('click',function(e){if(e.target===d)d.close();});
+d.addEventListener('close',function(){if(last)last.focus();});
+})();
+</script>
 </body>
 </html>
